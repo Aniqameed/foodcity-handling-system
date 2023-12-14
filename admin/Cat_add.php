@@ -7,7 +7,7 @@ include('../dbcon.php');
 			$catid = $_SESSION['catid'];
 									 
 
-			mysql_query("INSERT INTO categories VALUES ('$catid','$name')")or die(mysql_error());
+			mysqli_query($conn,"INSERT INTO categories VALUES ('$catid','$name')")or die(mysqli_error($conn));
 
 
 			

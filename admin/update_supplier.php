@@ -8,7 +8,7 @@
 	$phone=$_POST['phone'];
 	
 
-		mysql_query("UPDATE supplier SET Sup_Name='$sname', Sup_Address='$add', Sup_Mail='$mail', Sup_Phone='$phone' WHERE Supplier_ID='$supid'");
+		mysqli_query($conn,"UPDATE supplier SET Sup_Name='$sname', Sup_Address='$add', Sup_Mail='$mail', Sup_Phone='$phone' WHERE Supplier_ID='$supid'");
 		?>
 		<SCRIPT>
 			alert("Update Success");

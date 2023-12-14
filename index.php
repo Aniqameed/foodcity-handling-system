@@ -44,8 +44,8 @@ $_SESSION['type'] = "index";
 					$_SESSION['ord'] = $valu;
 					
 				}
-							$result = mysql_query("SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'");
-							while($row = mysql_fetch_array($result))
+							$result = mysqli_query($conn,"SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'");
+							while($row = mysqli_fetch_array($result))
 								
 								{
 									$count++;
@@ -157,8 +157,8 @@ $_SESSION['type'] = "index";
 							<option value = "all">All Category</option>
 							<?php
 							    include('dbcon.php');
-							    $r = mysql_query("select * from categories"); 
-							    while($row = mysql_fetch_array($r)){
+							    $r = mysqli_query($conn,"select * from categories"); 
+							    while($row = mysqli_fetch_array($r)){
 							         echo '<option value = '.$row['Cat_ID'].'>'.$row['Cat_Name'].'</option>';
 							    }
 							?>
@@ -396,7 +396,7 @@ $_SESSION['type'] = "index";
 						<h3 class="heading-tittle">Nuts</h3>
 						<?php
 							include('connect.php');
-							$result = $db->prepare("SELECT * FROM product WHERE Cat_ID = 'CAT0007' ORDER BY Product_ID DESC");
+							$result = $db->prepare("SELECT * FROM product WHERE Cat_ID = 'CAT0006' ORDER BY Product_ID DESC");
 							$result->execute();
 							for($i=0; $i<3; $i++){
 								$row = $result->fetch();
@@ -469,7 +469,7 @@ $_SESSION['type'] = "index";
 						<h3 class="heading-tittle">Oils</h3>
 						<?php
 							include('connect.php');
-							$result = $db->prepare("SELECT * FROM product WHERE Cat_ID = 'CAT0008' ORDER BY Product_ID DESC");
+							$result = $db->prepare("SELECT * FROM product WHERE Cat_ID = 'CAT0007' ORDER BY Product_ID DESC");
 							$result->execute();
 							for($i=0; $i<3; $i++){
 								$row = $result->fetch();
@@ -531,7 +531,7 @@ $_SESSION['type'] = "index";
 						<h3 class="heading-tittle">Pasta & Noodles</h3>
 						<?php
 							include('connect.php');
-							$result = $db->prepare("SELECT * FROM product WHERE Cat_ID = 'CAT0009' ORDER BY Product_ID DESC");
+							$result = $db->prepare("SELECT * FROM product WHERE Cat_ID = 'CAT0008' ORDER BY Product_ID DESC");
 							$result->execute();
 							for($i=0; $i<3; $i++){
 								$row = $result->fetch();

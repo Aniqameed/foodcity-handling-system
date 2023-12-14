@@ -4,9 +4,9 @@
 
 
 $proid=$_GET['id'];	
-$sqlSelectSpecProd = mysql_query("select * from cart where Product_ID = '$proid'") or die(mysql_error());
+$sqlSelectSpecProd = mysqli_query($conn,"select * from cart where Product_ID = '$proid'") or die(mysqli_error($conn));
 
-											$getProdInfo = mysql_fetch_array($sqlSelectSpecProd);
+											$getProdInfo = mysqli_fetch_array($sqlSelectSpecProd);
 
 											$quan = $getProdInfo["Quantity"];
 
@@ -21,22 +21,24 @@ $sqlSelectSpecProd = mysql_query("select * from cart where Product_ID = '$proid'
 			
 			</script>
 		<?php
-	}else{
-	$sqlSelectSpecProd = mysql_query("select * from product where Product_ID = '$proid'") or die(mysql_error());
+	}
+	else {
+	$sqlSelectSpecProd = mysqli_query($conn,"select * from product where Product_ID = '$proid');
 
-											$getProdInfo = mysql_fetch_array($sqlSelectSpecProd);
+											$getProdInfo = mysqli_fetch_array($sqlSelectSpecProd);
 
 	$amt = $getProdInfo["Price"];
 	$newamt = $newmin * $amt;
+	
 
-	$query=mysql_query("select * from product where Product_ID = '$proid'") or die(mysql_error());
+	$query=mysqli_query("select * from product where Product_ID = '$proid'") or die(mysqli_error());
 			$row=mysql_fetch_array($query);
 			$dquan = $row["Quantity"];
 	$newquan = $dquan + 1;
 						 
-			mysql_query("UPDATE product SET Quantity = '$newquan' WHERE Product_ID = '$proid'")or die(mysql_error());
+			mysqli_query($conn,"UPDATE product SET Quantity = '$newquan' WHERE Product_ID = '$proid'");
 
-	$sqlSelectSpecProd = mysql_query("update cart SET Quantity = '$newmin', Amount = '$newamt' where Product_ID = '$proid'") or die(mysql_error());
+	$sqlSelectSpecProd = mysqli_query($conn,"update cart SET Quantity = '$newmin', Amount = '$newamt' where Product_ID = '$proid'");
 
 
 	?>

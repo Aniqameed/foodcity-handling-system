@@ -7,7 +7,7 @@ include('../dbcon.php');
 			$password = $_POST['password1'];
 									 
 
-			mysql_query("INSERT INTO admin (Admin_ID, Admin_Pass) VALUES ('$uname','$password')")or die(mysql_error());
+			mysqli_query($conn,"INSERT INTO admin (Admin_ID, Admin_Pass) VALUES ('$uname','$password')")or die(mysqli_error($conn));
 
 
 			

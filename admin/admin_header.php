@@ -15,16 +15,16 @@
 				$count5=0;
 
 	include('./../dbcon.php');
-							$result = mysql_query("SELECT * FROM chat WHERE To_Status = 'Not Read'");
-							while($row = mysql_fetch_array($result))
+							$result = mysqli_query($conn,"SELECT * FROM chat WHERE To_Status = 'Not Read'");
+							while($row = mysqli_fetch_array($result))
 								
 								{
 
 									 $count2++;
 								}
 
-							$result10 = mysql_query("SELECT * FROM orders WHERE Status = 'Not Delivered'");
-							while($row = mysql_fetch_array($result10))
+							$result10 = mysqli_query($conn,"SELECT * FROM orders WHERE Status = 'Not Delivered'");
+							while($row = mysqli_fetch_array($result10))
 								
 								{
 

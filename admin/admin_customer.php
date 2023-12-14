@@ -48,8 +48,8 @@ include('admin_header.php'); ?>
 						<tbody>
 						<?php
 							include('../dbcon.php');
-							$result = mysql_query("SELECT * FROM customer");
-							while($row = mysql_fetch_array($result))
+							$result = mysqli_query($conn,"SELECT * FROM customer");
+							while($row = mysqli_fetch_array($result))
 								
 								{
 									?>

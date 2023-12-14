@@ -12,7 +12,7 @@
 
 	
 	if(!isset($img) || $img == ""){
-		mysql_query("UPDATE product SET Name='$pname', Description='$desc', Price='$price', Cat_ID='$catid', Date='$prodate'  WHERE Product_ID='$prodid'");
+		mysqli_query($conn,"UPDATE product SET Name='$pname', Description='$desc', Price='$price', Cat_ID='$catid', Date='$prodate'  WHERE Product_ID='$prodid'");
 		
 		?>
 		<SCRIPT>
@@ -40,7 +40,7 @@
 
 			
 			move_uploaded_file($_FILES["image"]["tmp_name"],"../uploads/" . $_FILES["image"]["name"]);
-		mysql_query("UPDATE product SET Name='$pname', Description='$desc', Price='$price', Cat_ID='$catid', Date='$prodate', Imgurl = '$location'  WHERE Product_ID='$prodid'");
+		mysqli_query($conn,"UPDATE product SET Name='$pname', Description='$desc', Price='$price', Cat_ID='$catid', Date='$prodate', Imgurl = '$location'  WHERE Product_ID='$prodid'");
 		?>
 		<SCRIPT>
 			alert("Update Success");

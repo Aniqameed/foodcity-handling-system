@@ -86,7 +86,7 @@ session_start();
 					
 					<b>
 					<li>
-						<span class="fa fa-phone" aria-hidden="true"></span> 0094770573918
+						<span class="fa fa-phone" aria-hidden="true"></span> 0094767683518
 					</li>
 					<?php
 							
@@ -160,7 +160,7 @@ session_start();
 				
 				<div class="agileits_search">
 					<form action="search.php" method="post">
-						<div style="">
+						<div style ="">
 						<select style="width: 100%;
 					   	 padding: 1em 1em 1em 1em;
 					    font-size: 0.8em;
@@ -175,8 +175,8 @@ session_start();
 							<option value = "all">All Category</option>
 							<?php
 							    include('dbcon.php');
-							    $r = mysql_query("select * from categories"); 
-							    while($row = mysql_fetch_array($r)){
+							    $r = mysqli_query($conn,"select * from categories"); 
+							    while($row = mysqli_fetch_array($r)){
 							         echo '<option value = '.$row['Cat_ID'].'>'.$row['Cat_Name'].'</option>';
 							    }
 							?>
@@ -197,8 +197,8 @@ session_start();
 					include('dbcon.php');
 					
 					$catname = $_POST['Search'];
-					$query = mysql_query("select * from categories where Cat_Name = '$catname'")or die(mysql_error());
-					$count1 = mysql_num_rows($query);
+					$query = mysqli_query($conn,"select * from categories where Cat_Name = '$catname'")or die(mysqli_error($conn));
+					$count1 = mysqli_num_rows($query);
 					
 
 					if ($count1 > 0){ 
@@ -225,8 +225,8 @@ session_start();
 				}
 				include('dbcon.php');
 				$online = 0;
-								$result7 = mysql_query("SELECT * FROM admin where onoff = 'online'");
-							while($row = mysql_fetch_array($result7))
+								$result7 = mysqli_query($conn,"SELECT * FROM admin where onoff = 'online'");
+							while($row = mysqli_fetch_array($result7))
 								
 								{	
 									$online++;
@@ -308,10 +308,10 @@ session_start();
 						<form action="Cus_add.php" method="post">
 							
 							<div class="styled-input agile-styled-input-top">
-								<input type="text" placeholder="Name Ex.AFHAM" name="name" required="">
+								<input type="text" placeholder="Name Ex.ANIQA" name="name" required="">
 							</div>
 							<div class="styled-input">
-								<input type="email" placeholder="E-mail Ex.afh@example.com" name="email" required="">
+								<input type="email" placeholder="E-mail Ex.ani@example.com" name="email" required="">
 							</div>
 							<div class="styled-input">
 								<input type="password" placeholder="Password" name="password" id="password1" required="">
@@ -324,7 +324,7 @@ session_start();
 							</div>
 						
 							<div class="styled-input agile-styled-input-top">
-								<input type="text" placeholder="Phone Ex.0771234567" onkeypress="return isNumberKey(event)" name="phone" required="">
+								<input type="text" placeholder="Phone Ex.0767683518" onkeypress="return isNumberKey(event)" name="phone" required="">
 							</div>
 
 							<input type="submit" value="Sign Up" name="save">
@@ -418,10 +418,10 @@ session_start();
 						<form action="Cus_update.php" method="post">
 							
 							<div class="styled-input agile-styled-input-top">
-								<input type="text" placeholder="Name Ex.AFHAM" name="name"  value = "<?php echo $row['Cus_Name'] ?>" required="">
+								<input type="text" placeholder="Name Ex.ANIQA" name="name"  value = "<?php echo $row['Cus_Name'] ?>" required="">
 							</div>
 							<div class="styled-input">
-								<input type="email" placeholder="E-mail Ex.afh@example.com" name="email" required="" value = "<?php echo $row['Cus_Mail']; ?>">
+								<input type="email" placeholder="E-mail Ex.ani@example.com" name="email" required="" value = "<?php echo $row['Cus_Mail']; ?>">
 							</div>
 							<div class="styled-input">
 								<input type="password" placeholder="Password" value = "<?php echo $row['Cus_Pass']; ?>" name="password" id="password1" required="" >
@@ -434,7 +434,7 @@ session_start();
 							</div>
 						
 							<div class="styled-input agile-styled-input-top">
-								<input type="text" placeholder="Phone Ex.0771234567" name="phone" onkeypress="return isNumberKey(event)" required="" value = "<?php echo $row['Cus_Phone']; ?>">
+								<input type="text" placeholder="Phone Ex.0767683518" name="phone" onkeypress="return isNumberKey(event)" required="" value = "<?php echo $row['Cus_Phone']; ?>">
 							</div>
 
 							<input type="submit" value="Update" name="save">
@@ -544,8 +544,8 @@ session_start();
 								include('dbcon.php');
 							$no = 1;
 							$cus = $_SESSION['cusid'];
-							 $query = mysql_query("SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'")or die(mysql_error());
-							$count = mysql_num_rows($query);
+							 $query = mysqli_query($conn,"SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'")or die(mysqli_error($conn));
+							$count = mysqli_num_rows($query);
 
 						if ($count > 0){ ?>
 							<tr>
@@ -567,8 +567,8 @@ session_start();
 							include('dbcon.php');
 							
 							
-							$result = mysql_query("SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'");
-							while($row = mysql_fetch_array($result))
+							$result = mysqli_query($conn,"SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'");
+							while($row = mysqli_fetch_array($result))
 								
 								{	
 									$_SESSION['Prid'] = $row['Product_ID'];
@@ -611,8 +611,8 @@ session_start();
 						<?php $no++; }?>
 
 						<?php 
-							$result = mysql_query("SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'");
-							while($row = mysql_fetch_array($result))
+							$result = mysqli_query($conn,"SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'");
+							while($row = mysqli_fetch_array($result))
 								{
 									$total = $total + $row['Amount'];
 

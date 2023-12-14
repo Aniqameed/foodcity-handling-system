@@ -30,8 +30,8 @@ include('dbcon.php');
 			$phone=$_POST['phone'];
 									 
 
-			$query = mysql_query("select * from customer where Cus_Mail = '$email'")or die(mysql_error());
-			$count = mysql_num_rows($query);
+			$query = mysqli_query($conn,"select * from customer where Cus_Mail = '$email'");
+			$count = mysqli_num_rows($query);
 
 			if ($count > 0){ ?>
 			<script>
@@ -42,7 +42,7 @@ include('dbcon.php');
 			<?php
 			}else{
 
-			mysql_query("INSERT INTO customer (Customer_ID, Cus_Name, Cus_Pass, Cus_Address, Cus_Phone, Cus_Mail, onoff) VALUES ('$id', '$name', '$password', '$address', '$phone', '$email', 'online')")or die(mysql_error());
+			mysqli_query($conn,"INSERT INTO customer (Customer_ID, Cus_Name, Cus_Pass, Cus_Address, Cus_Phone, Cus_Mail, onoff) VALUES ('$id', '$name', '$password', '$address', '$phone', '$email', 'online')");
 
 
 			

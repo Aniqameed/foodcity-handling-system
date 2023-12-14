@@ -35,7 +35,7 @@ include('dbcon.php');
 
 			
 
-			mysql_query("INSERT INTO feedback VALUES ('$id', '$cus_id', '$pro_ID', '$mes', '$date', '$time')")or die(mysql_error());
+			mysqli_query($conn,"INSERT INTO feedback VALUES ('$id', '$cus_id', '$pro_ID', '$mes', '$date', '$time')");
 
 
 			

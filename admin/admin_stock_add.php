@@ -64,8 +64,8 @@ include('admin_header.php'); ?>
 					<option>-- SELECT --</option>
 				<?php
 				    include('../dbcon.php');
-				    $r = mysql_query("select * from supplier"); 
-				    while($row = mysql_fetch_array($r)){
+				    $r = mysqli_query($conn,"select * from supplier"); 
+				    while($row = mysqli_fetch_array($r)){
 				         echo '<option>'.$row['Supplier_ID'].'</option>';
 				    }
 				?>
@@ -78,8 +78,8 @@ include('admin_header.php'); ?>
 					<option>-- SELECT --</option>
 				<?php
 				    include('../dbcon.php');
-				    $r = mysql_query("select * from product"); 
-				    while($row = mysql_fetch_array($r)){
+				    $r = mysqli_query($conn,"select * from product"); 
+				    while($row = mysqli_fetch_array($r)){
 				         echo '<option>'.$row['Product_ID'].'</option>';
 				    }
 				?>
@@ -93,7 +93,7 @@ include('admin_header.php'); ?>
 
 			<div class="snipcart-details11 top_brand_home_details item_add single-item hvr-outline-out" style = "padding-left: 250px; padding-right: 800px;">
 											
-			<input type="submit" value="Save" name="save"  class="button11" onclick = "window.location.href='stock_add.php"/></a>
+			<input type="submit" value="Save" name="save"  class="button11" onclick = "window.location.href='stock_add.php'"/></a>
 			</div>
 			</form>
 

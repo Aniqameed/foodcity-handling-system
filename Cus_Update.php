@@ -13,7 +13,7 @@
 		
 	
 	
-		mysql_query("UPDATE customer SET Cus_Name='$cname',Cus_Pass='$pass', Cus_Address='$add', Cus_Phone='$phone', Cus_Mail='$mail'  WHERE Customer_ID='$cusid'");
+		mysqli_query($conn,"UPDATE customer SET Cus_Name='$cname',Cus_Pass='$pass', Cus_Address='$add', Cus_Phone='$phone', Cus_Mail='$mail'  WHERE Customer_ID='$cusid'");
 		
 	
 

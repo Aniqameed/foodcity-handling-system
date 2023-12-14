@@ -1,8 +1,8 @@
 <?php
    $count=0;
 	include('./../dbcon.php');
-							$result = mysql_query("SELECT * FROM Categories");
-							while($row = mysql_fetch_array($result))
+							$result = mysqli_query($conn,"SELECT * FROM Categories");
+							while($row = mysqli_fetch_array($result))
 								
 								{
 

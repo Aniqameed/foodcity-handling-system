@@ -65,7 +65,7 @@ include('admin_header.php'); ?>
 
 			<div class="snipcart-details11 top_brand_home_details item_add single-item hvr-outline-out" style = "padding-left: 250px; padding-right: 800px;">
 											
-			<input type="submit" value="Save" name="save"  class="button11" onclick = "window.location.href='Cat_add.php"/></a>
+			<input type="submit" value="Save" name="save"  class="button11" onclick = "window.location.href='Cat_add.php'"/></a>
 			</div>
 			</form>
 

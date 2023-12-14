@@ -6,7 +6,7 @@ if(isset($_GET['id']))
 {
 $id=$_GET['id'];
  $sql = "delete from chat where Chat_ID='$id'";
-mysql_query( $sql);
+mysqli_query($conn,$sql);
 
 
 

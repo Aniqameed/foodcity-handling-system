@@ -45,8 +45,8 @@ include('dbcon.php');
 					$_SESSION['ord'] = $valu;
 					
 				}
-							$result = mysql_query("SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'");
-							while($row = mysql_fetch_array($result))
+							$result = mysqli_query($conn,"SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'");
+							while($row = mysqli_fetch_array($result))
 								
 								{
 									$count++;

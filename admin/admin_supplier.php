@@ -47,8 +47,8 @@ include('admin_header.php'); ?>
 						<tbody>
 						<?php
 							include('../dbcon.php');
-							$result = mysql_query("SELECT * FROM supplier");
-							while($row = mysql_fetch_array($result))
+							$result = mysqli_query($conn,"SELECT * FROM supplier");
+							while($row = mysqli_fetch_array($result))
 								
 								{
 									?>

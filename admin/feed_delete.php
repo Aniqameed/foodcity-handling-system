@@ -6,7 +6,7 @@ if($_GET['id'])
 {
 $id=$_GET['id'];
  $sql = "delete from feedback where F_ID='$id'";
-mysql_query( $sql);
+mysqli_query($conn, $sql);
 
 
 

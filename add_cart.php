@@ -67,9 +67,9 @@ include('conn.php');
 	$orderid = $valu;
 
 
-		$sqlSelectSpecProd = mysql_query("select * from product where Product_ID = '$prodID' ") or die(mysql_error());
+		$sqlSelectSpecProd = mysqli_query($conn,"select * from product where Product_ID = '$prodID' ") ;
 
-		$getProdInfo = mysql_fetch_array($sqlSelectSpecProd);
+		$getProdInfo = mysqli_fetch_array($sqlSelectSpecProd);
 
 		$proname = $getProdInfo["Name"];
 
@@ -85,8 +85,8 @@ include('conn.php');
 
 
 
-		$query = mysql_query("select * from cart where Order_ID = '$orderid' AND Product_ID = '$prodID' AND Cus_ID = '$cusid'")or die(mysql_error());
-			$count = mysql_num_rows($query);
+		$query = mysqli_query($conn,"select * from cart where Order_ID = '$orderid' AND Product_ID = '$prodID' AND Cus_ID = '$cusid'");
+			$count = mysqli_num_rows($query);
 
 			if ($count > 0){ 
 				if($status == "index"){
@@ -213,10 +213,10 @@ include('conn.php');
 			$newquan = $row['Quantity'] - $quan;
 		
 
-		mysql_query("UPDATE product SET Quantity = '$newquan' WHERE Product_ID = '$prodID'")or die(mysql_error());
+		mysqli_query($conn,"UPDATE product SET Quantity = '$newquan' WHERE Product_ID = '$prodID'");
 
 
-		mysql_query("INSERT INTO cart VALUES ('$crtid', '$orderid', '$prodID', '$proname', '$img', '$pri', '$quan', '$Amount', '$cusid')")or die(mysql_error());
+		mysqli_query($conn,"INSERT INTO cart VALUES ('$crtid', '$orderid', '$prodID', '$proname', '$img', '$pri', '$quan', '$Amount', '$cusid')");
 
 		if($status == "index"){
 			$_SESSION['msg'] = "Product Added to Cart";

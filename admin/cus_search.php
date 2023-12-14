@@ -45,8 +45,8 @@ include('admin_header.php'); ?>
 				<?php 
 				if(isset($_POST['Search'])){
 					$cusid = $_POST['Search'];
-					$query = mysql_query("select * from customer where Customer_ID = '$cusid'")or die(mysql_error());
-					$count1 = mysql_num_rows($query);
+					$query = mysqli_query($conn,"select * from customer where Customer_ID = '$cusid'")or die(mysqli_error($conn));
+					$count1 = mysqli_num_rows($query);
 
 					if ($count1 > 0){ 
 						include('../conn.php');

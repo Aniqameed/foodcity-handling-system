@@ -2,23 +2,23 @@
 	include('dbcon.php');
 
 $proid=$_GET['id'];	
-$sqlSelectSpecProd = mysql_query("select * from cart where Product_ID = '$proid'") or die(mysql_error());
+$sqlSelectSpecProd = mysqli_query($conn,"select * from cart where Product_ID = '$proid'") ;
 
-											$getProdInfo = mysql_fetch_array($sqlSelectSpecProd);
+											$getProdInfo = mysqli_fetch_array($sqlSelectSpecProd);
 
 											$quan = $getProdInfo["Quantity"];
 
 
 	$newmin = $quan - 1;
 
-	$sqlSelectSpecProd = mysql_query("select * from product where Product_ID = '$proid'") or die(mysql_error());
+	$sqlSelectSpecProd = mysqli_query($conn,"select * from product where Product_ID = '$proid'");
 
-											$getProdInfo = mysql_fetch_array($sqlSelectSpecProd);
+											$getProdInfo = mysqli_fetch_array($sqlSelectSpecProd);
 
 	$amt = $getProdInfo["Price"];
 	$newamt = $newmin * $amt;
 
-	$sqlSelectSpecProd = mysql_query("update cart SET Quantity = '$newmin', Amount = '$newamt' where Product_ID = '$proid'") or die(mysql_error());
+	$sqlSelectSpecProd = mysqli_query($conn,"update cart SET Quantity = '$newmin', Amount = '$newamt' where Product_ID = '$proid'");
 
 
 	?>

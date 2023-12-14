@@ -62,8 +62,8 @@ include('admin_header.php'); ?>
 					<option></option>
 				<?php
 				    include('../dbcon.php');
-				    $r = mysql_query("select * from supplier"); 
-				    while($row = mysql_fetch_array($r)){
+				    $r = mysqli_query($conn,"select * from supplier"); 
+				    while($row = mysqli_fetch_array($r)){
 				         echo '<option>'.$row['Supplier_ID'].'</option>';
 				    }
 				?>
@@ -119,7 +119,7 @@ include('admin_header.php'); ?>
 				
 			<div class="snipcart-details11 top_brand_home_details item_add single-item hvr-outline-out" style = "padding-left: 245px; padding-right: 800px">
 											
-			<input type="submit" name="save" value = "Update"  class="button11" onclick = "window.location.href='update_supplier.php"/></a>
+			<input type="submit" name="save" value = "Update"  class="button11" onclick = "window.location.href='update_supplier.php'"/></a>
 			</div></form>
 		<?php }?>
 
@@ -129,7 +129,7 @@ include('admin_header.php'); ?>
 		
 			
 			<SCRIPT language=Javascript>
-      <!--
+      
 		      function isNumberKey(evt)
 		      {
 		         var charCode = (evt.which) ? evt.which : event.keyCode

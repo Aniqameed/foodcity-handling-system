@@ -49,8 +49,8 @@ include('admin_header.php');
 				if(isset($_GET['id'])){
 					$chtid = $_GET['id'];
 					include('../dbcon.php');
-								$query=mysql_query("select * from chat where Chat_ID = '$chtid'");
-								$row=mysql_fetch_array($query);
+								$query=mysqli_query($conn,"select * from chat where Chat_ID = '$chtid'");
+								$row=mysqli_fetch_array($query);
 
 								echo "<b>Chat ID : </b>".$row['Chat_ID'];
 								echo "<br><b>Name : </b>".$row['Name'];
@@ -61,7 +61,7 @@ include('admin_header.php');
 								echo "<br><b>Time : </b>".$row['Time'];
 
 								
-  								mysql_query("UPDATE chat SET To_Status='Read' WHERE Chat_ID = '$chtid'");
+  								mysqli_query($conn,"UPDATE chat SET To_Status='Read' WHERE Chat_ID = '$chtid'");
 				}
 				?>
 			</font>

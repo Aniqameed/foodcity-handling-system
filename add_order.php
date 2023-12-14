@@ -8,7 +8,7 @@
 
 	$status = "Not Delivered";
 
-	mysql_query("INSERT INTO orders (Order_ID, Cus_ID, Amount, Date, Status) VALUES ('$orderid', '$cusid', '$amount', '$date', '$status')")or die(mysql_error());
+	mysqli_query($conn,"INSERT INTO orders (Order_ID, Cus_ID, Amount, Date, Status) VALUES ('$orderid', '$cusid', '$amount', '$date', '$status')");
 
 		?>
 			<script>

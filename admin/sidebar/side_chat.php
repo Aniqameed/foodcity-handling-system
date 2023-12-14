@@ -4,16 +4,16 @@
     $count4=0;
    $feed=0;
 	include('./../dbcon.php');
-							$result = mysql_query("SELECT * FROM chat WHERE Type = 'contact'");
-							while($row = mysql_fetch_array($result))
+							$result = mysqli_query($conn,"SELECT * FROM chat WHERE Type = 'contact'");
+							while($row = mysqli_fetch_array($result))
 								
 								{
 
 									 $count++;
 								}
 
-                  $result1 = mysql_query("SELECT * FROM chat WHERE Type = 'contact' AND To_Status = 'Not Read'");
-              while($row1 = mysql_fetch_array($result1))
+                  $result1 = mysqli_query($conn,"SELECT * FROM chat WHERE Type = 'contact' AND To_Status = 'Not Read'");
+              while($row1 = mysqli_fetch_array($result1))
                 
                 {
                    $count1++;
@@ -22,8 +22,8 @@
           
 
             
-                $result8 = mysql_query("SELECT * FROM feedback");
-              while($row = mysql_fetch_array($result8))
+                $result8 = mysqli_query($conn,"SELECT * FROM feedback");
+              while($row = mysqli_fetch_array($result8))
                 
                 {
 

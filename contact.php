@@ -39,8 +39,8 @@ include('dbcon.php');
 					$_SESSION['ord'] = $valu;
 					
 				}
-							$result = mysql_query("SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'");
-							while($row = mysql_fetch_array($result))
+							$result = mysqli_query($conn,"SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'");
+							while($row = mysqli_fetch_array($result))
 								
 								{
 									$count++;
@@ -152,14 +152,14 @@ include('dbcon.php');
 						<div class="col-xs-7 contact-text w3-agileits">
 							<h4>GET IN TOUCH :</h4>
 							<p>
-								<i class="fa fa-map-marker"></i> 123 Sebastian, NY 10002, USA.</p>
+								<i class="fa fa-map-marker"></i> 57,Old peopl's bank road,Oddamavadi,Batticaloa.</p>
 							<p>
-								<i class="fa fa-phone"></i> Telephone : 0770573918</p>
+								<i class="fa fa-phone"></i> Telephone : 0767683518</p>
 							<p>
 								<i class="fa fa-fax"></i> FAX : +1 888 888 4444</p>
 							<p>
 								<i class="fa fa-envelope-o"></i> Email :
-								<a href="mailto:example@mail.com">afhamrazik@gmail.com</a>
+								<a href="mailto:example@mail.com">aniqameed078@gmail.com</a>
 							</p>
 						</div>
 						<div class="col-xs-5 contact-agile">
@@ -174,8 +174,7 @@ include('dbcon.php');
 	</div>
 	<!-- map -->
 	<div class="map w3layouts">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55565170.29301636!2d-132.08532758867793!3d31.786060306224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2sin!4v1512365940398"
-		    allowfullscreen></iframe>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2678.3879921042953!2d81.52234542260754!3d7.913230833826025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afad87c5bffde6b%3A0x3d2150f0d9d1454c!2sOld%20People&#39;s%20Bank%20Rd%2C%20Oddamavadi!5e0!3m2!1sen!2slk!4v1702531576012!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>		    allowfullscreen></iframe>
 	</div>
 	<?php include('Guest_Footer.php'); ?>
 	</body>

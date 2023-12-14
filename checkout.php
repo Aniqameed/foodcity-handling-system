@@ -46,8 +46,8 @@ include('dbcon.php');
 					$_SESSION['ord'] = $valu;
 					
 				}
-							$result = mysql_query("SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'");
-							while($row = mysql_fetch_array($result))
+							$result = mysqli_query($conn,"SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'");
+							while($row = mysqli_fetch_array($result))
 								
 								{
 									$count++;
@@ -167,8 +167,8 @@ include('dbcon.php');
 				$_SESSION['ord'] = $valu;
 				
 			}
-			$query = mysql_query("SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'")or die(mysql_error());
-			$count = mysql_num_rows($query);
+			$query = mysqli_query($conn,"SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'");
+			$count = mysqli_num_rows($query);
 
 			if ($count > 0){ ?>
 					<table class="timetable_sub">
@@ -193,8 +193,8 @@ include('dbcon.php');
 							include('dbcon.php');
 							$no = 1;
 							$cus = $_SESSION['cusid'];
-							$result = mysql_query("SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'");
-							while($row = mysql_fetch_array($result))
+							$result = mysqli_query($conn,"SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'");
+							while($row = mysqli_fetch_array($result))
 								
 								{	
 									$_SESSION['Prid'] = $row['Product_ID'];
@@ -243,8 +243,8 @@ include('dbcon.php');
 						<?php $no++; }?>
 
 						<?php 
-							$result = mysql_query("SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'");
-							while($row = mysql_fetch_array($result))
+							$result = mysqli_query($conn,"SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'");
+							while($row = mysqli_fetch_array($result))
 								{
 									$total = $total + $row['Amount'];
 
@@ -288,7 +288,7 @@ include('dbcon.php');
 					<?php
 					if (!isset($_SESSION['id']) ||(trim ($_SESSION['id']) == '')){}else{ 
 				?>
-	<font face = "ubuntu" color = "blue"><h3><div style = "" ><center><i class="fa fa-sort-amount-asc"></i> Your Order Details</center>
+	<font face = "ubuntu" color = "blue"><h3><div style ="" ><center><i class="fa fa-sort-amount-asc"></i> Your Order Details</center>
 				
 			</div></h3></font><br>
 			<table class="table table-bordered" align="center" style = "width: 82%; font-family: ubuntu;">
@@ -309,8 +309,8 @@ include('dbcon.php');
 						<tbody>
 						<?php
 							include('dbcon.php');
-							$result = mysql_query("SELECT * FROM orders where cus_ID = '$cus'");
-							while($row = mysql_fetch_array($result))
+							$result = mysqli_query($conn,"SELECT * FROM orders where cus_ID = '$cus'");
+							while($row = mysqli_fetch_array($result))
 								
 								{
 									?>

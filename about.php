@@ -40,8 +40,8 @@ include('dbcon.php');
 					$_SESSION['ord'] = $valu;
 					
 				}
-							$result = mysql_query("SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'");
-							while($row = mysql_fetch_array($result))
+							$result = mysqli_query($conn,"SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'");
+							while($row = mysqli_fetch_array($result))
 								
 								{
 									$count++;
@@ -50,7 +50,7 @@ include('dbcon.php');
 ?>
 <html>
 	<head>
-		<title>Foodcity | About Us </title>
+		 <title>Foodcity | About Us </title>
 	</head>
 	<body>
 		
@@ -114,7 +114,7 @@ This Supermarket Management System is web application, it is help to particular 
 				
 				<div class="col-sm-6 col-xs-6 welcome-grids">
 					<div class="welcome-img" >
-						&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <img src="images/afh.jpg" class="img-responsive zoom-img" style="float: center" alt="" >
+						&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <img src="images/aniqa.jpg" class="img-responsive zoom-img" style="float: center" alt="" >
 					</div>
 				</div>
 				<div class="clearfix"> </div>

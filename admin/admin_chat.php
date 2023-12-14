@@ -11,8 +11,8 @@
 
 	include('../dbcon.php');
 		$read = 0;
-			$result7 = mysql_query("SELECT * FROM chat WHERE Type = 'contact' AND To_Status = 'Read'");
-			while($row = mysql_fetch_array($result7))
+			$result7 = mysqli_query($conn,"SELECT * FROM chat WHERE Type = 'contact' AND To_Status = 'Read'");
+			while($row = mysqli_fetch_array($result7))
 				
 				{
 

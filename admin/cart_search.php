@@ -40,8 +40,8 @@ include('admin_header.php'); ?>
 							<option></option>
 						<?php
 						    include('../dbcon.php');
-						    $r = mysql_query("select * from orders"); 
-						    while($row = mysql_fetch_array($r)){
+						    $r = mysqli_query($conn,"select * from orders"); 
+						    while($row = mysqli_fetch_array($r)){
 						         echo '<option>'.$row['Order_ID'].'</option>';
 						    }
 						?>
@@ -59,8 +59,8 @@ include('admin_header.php'); ?>
 				if(isset($_POST['Search'])){?>
 				<?php
 					$ordid = $_POST['Search'];
-					$query = mysql_query("select * from cart where Order_ID = '$ordid'")or die(mysql_error());
-					$count1 = mysql_num_rows($query);
+					$query = mysqli_query($conn,"select * from cart where Order_ID = '$ordid'")or die(mysqli_error($conn));
+					$count1 = mysqli_num_rows($query);
 
 					if ($count1 > 0){ 
 						include('../conn.php');
@@ -98,8 +98,8 @@ include('admin_header.php'); ?>
 						<tbody><?php
 						include('../dbcon.php');
 							$total = 0;
-							$result = mysql_query("SELECT * FROM cart  where Order_ID = '$ordid'");
-							while($row = mysql_fetch_array($result))
+							$result = mysqli_query($conn,"SELECT * FROM cart  where Order_ID = '$ordid'");
+							while($row = mysqli_fetch_array($result))
 								
 								{ $total = $total + $row['Amount'];
 						?>

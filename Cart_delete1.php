@@ -6,7 +6,7 @@
 	{
 	$id=$_GET['id'];
 	 $sql = "delete from cart where Product_ID='$id'";
-	mysql_query( $sql);
+	mysqli_query($conn, $sql);
 
 	 ;
 

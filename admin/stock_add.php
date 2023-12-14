@@ -15,9 +15,9 @@
 
 
 			include('../dbcon.php');			 
-			mysql_query("UPDATE product SET Quantity = '$newquan' WHERE Product_ID = '$pro'")or die(mysql_error());
+			mysqli_query($conn,"UPDATE product SET Quantity = '$newquan' WHERE Product_ID = '$pro'")or die(mysqli_error($conn));
 
-			mysql_query("INSERT INTO stock VALUES ('$catid','$sup','$pro','$quan')")or die(mysql_error());
+			mysqli_query($conn,"INSERT INTO stock VALUES ('$catid','$sup','$pro','$quan')")or die(mysqli_error($conn));
 
 			
 

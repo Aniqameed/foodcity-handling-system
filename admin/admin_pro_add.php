@@ -82,8 +82,8 @@ include('admin_header.php'); ?>
 					<option>-- SELECT --</option>
 				<?php
 				    include('../dbcon.php');
-				    $r = mysql_query("select * from categories"); 
-				    while($row = mysql_fetch_array($r)){
+				    $r = mysqli_query($conn,"select * from categories"); 
+				    while($row = mysqli_fetch_array($r)){
 				         echo '<option>'.$row['Cat_ID'].'</option>';
 				    }
 				?>
@@ -104,7 +104,7 @@ include('admin_header.php'); ?>
 			</div>
 			<div class="snipcart-details11 top_brand_home_details item_add single-item hvr-outline-out" style = "padding-left: 245px; padding-right: 800px">
 											
-			<input type="submit" name="save" value = "Save"  class="button11" onclick = "window.location.href='pro_add.php"/></a>
+			<input type="submit" name="save" value = "Save"  class="button11" onclick = "window.location.href='pro_add.php'"/></a>
 			</div></form></div></div></div></div></div>
 
 		

@@ -10,7 +10,7 @@ $valu = $_SESSION['ord'];
 $cus = $_SESSION['cusid'];
 
  $sql = "delete from cart where Order_ID = '$valu' AND Cus_ID = '$cus'";
-mysql_query( $sql);
+mysqli_query( $conn,$sql);
 
 
 

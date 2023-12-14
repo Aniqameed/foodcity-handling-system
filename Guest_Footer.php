@@ -67,34 +67,34 @@
 						<h3>Categories</h3>
 						<ul>
 							<li>
-								<a href="product.html">Grocery</a>
+								<a href="categories.php?id=CAT0001">Bakery</a>
 							</li>
 							<li>
-								<a href="product.html">Fruits</a>
+								<a href="categories.php?id=CAT0002">Baking Supplies</a>
 							</li>
 							<li>
-								<a href="product.html">Soft Drinks</a>
+								<a href="categories.php?id=CAT0003">Coffee,Tea & Bevarages</a>
 							</li>
 							<li>
-								<a href="product2.html">Dishwashers</a>
+								<a href="categories.php?id=CAT0004">Sweet & Chocolate</a>
 							</li>
 							<li>
-								<a href="product.html">Biscuits & Cookies</a>
+								<a href="categories.php?id=CAT0005">Spices & Masalas</a>
 							</li>
 							<li>
-								<a href="product2.html">Baby Diapers</a>
+								<a href="categories.php?id=CAT0006">Nuts</a>
 							</li>
 						</ul>
 					</div>
 					<div class="col-xs-6 footer-grids agile-secomk">
 						<ul>
 							<li>
-								<a href="product.html">Snacks & Beverages</a>
+								<a href="categories.php?id=CAT0007">Oil</a>
 							</li>
 							<li>
-								<a href="product.html">Bread & Bakery</a>
+								<a href="categories.php?id=CAT0008">Pasta & Noodles</a>
 							</li>
-							<li>
+							<!-- <li>
 								<a href="product.html">Sweets</a>
 							</li>
 							<li>
@@ -105,7 +105,7 @@
 							</li>
 							<li>
 								<a href="product.html">Dried Fruits & Nuts</a>
-							</li>
+							</li> -->
 						</ul>
 					</div>
 					<div class="clearfix"></div>
@@ -116,22 +116,19 @@
 						<h3>Quick Links</h3>
 						<ul>
 							<li>
-								<a href="about.html">About Us</a>
+								<a href="about.php">About Us</a>
 							</li>
 							<li>
-								<a href="contact.html">Contact Us</a>
+								<a href="contact.php">Contact Us</a>
 							</li>
 							<li>
-								<a href="help.html">Help</a>
+								<a href="terms.php">Terms of use</a>
 							</li>
 							<li>
-								<a href="faqs.html">Faqs</a>
+								<a href="privacy.php">Privacy Policy</a>
 							</li>
 							<li>
-								<a href="terms.html">Terms of use</a>
-							</li>
-							<li>
-								<a href="privacy.html">Privacy Policy</a>
+								<a href="return.php">Return Policy</a>
 							</li>
 						</ul>
 					</div>
@@ -139,14 +136,14 @@
 						<h3>Get in Touch</h3>
 						<ul>
 							<li>
-								<i class="fa fa-map-marker"></i> 123, Vanniyar Road, Nintavur.</li>
+								<i class="fa fa-map-marker"></i> 57,Old People's Bank Road, Oddamavadi , Batticaloa.</li>
 							<li>
-								<i class="fa fa-mobile"></i> +94672250233 </li>
+								<i class="fa fa-mobile"></i> +94767683518 </li>
 							<li>
-								<i class="fa fa-phone"></i> +94770573918 </li>
+								<i class="fa fa-phone"></i> +94771140382 </li>
 							<li>
 								<i class="fa fa-envelope-o"></i>
-								<a href="mailto:example@mail.com"> afhamrazik@gmail.com</a>
+								<a href="mailto:example@mail.com"> aniqameed078@gmail.com</a>
 							</li>
 						</ul>
 					</div>
@@ -194,14 +191,14 @@
 
 	<div class="copy-right">
 		<div class="container">
-			<p>© 2019 H2 Foodcity. All rights reserved | Design by
-				<a href="http://afhsoft.com"> Afhsoft</a>
+			<p>© 2023 H2 Foodcity. All rights reserved | Design by
+				<a href="http://anisoft.com"> Anisoft</a>
 			</p>
 		</div>
 	</div>
 
 	<SCRIPT language=Javascript>
-      <!--
+      
 		      function isNumberKey(evt)
 		      {
 		         var charCode = (evt.which) ? evt.which : event.keyCode

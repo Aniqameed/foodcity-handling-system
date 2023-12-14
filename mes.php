@@ -32,7 +32,7 @@ include('dbcon.php');
 				date_default_timezone_set('Asia/Colombo');
 				$time = date("h:i:s A");
 
-			mysql_query("INSERT INTO chat (Chat_ID, Name, Subject, Mail, Message, Date, Time, Type, To_Status) VALUES ('$valu', '$name', '$subject', '$email', '$message', '$date', '$time', 'contact', 'Not Read')")or die(mysql_error());
+			mysqli_query($conn,"INSERT INTO chat (Chat_ID, Name, Subject, Mail, Message, Date, Time, Type, To_Status) VALUES ('$valu', '$name', '$subject', '$email', '$message', '$date', '$time', 'contact', 'Not Read')");
 
 			session_start();
 			$_SESSION['cont'] = "Mail Sent Successfully.. We Will Reply Soon";

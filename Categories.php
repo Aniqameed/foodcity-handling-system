@@ -26,9 +26,9 @@ $_SESSION['type'] = "cat";
 	}
 
 		else{
-		$sqlSelectSpecProd = mysql_query("select * from categories where Cat_ID = '$prodID'") or die(mysql_error());
+		$sqlSelectSpecProd = mysqli_query($conn,"select * from categories where Cat_ID = '$prodID'") or die(mysqli_error($conn));
 
-		$getProdInfo = mysql_fetch_array($sqlSelectSpecProd);
+		$getProdInfo = mysqli_fetch_array($sqlSelectSpecProd);
 	
 		$catname = $getProdInfo["Cat_Name"];
 		
@@ -64,8 +64,8 @@ include('dbcon.php');
 					$_SESSION['ord'] = $valu;
 					
 				}
-							$result = mysql_query("SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'");
-							while($row = mysql_fetch_array($result))
+							$result = mysqli_query($conn,"SELECT * FROM cart where Order_ID = '$valu' AND Cus_ID = '$cus'");
+							while($row = mysqli_fetch_array($result))
 								
 								{
 									$count++;

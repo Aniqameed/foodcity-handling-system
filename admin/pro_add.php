@@ -28,12 +28,12 @@ include('../dbcon.php');
 			$date=$_POST['prodate'];
 			$location=$_FILES["image"]["name"];
 
-			$query = mysql_query("select * from categories where Cat_ID = '$catid'")or die(mysql_error());
-			$count = mysql_num_rows($query);
+			$query = mysqli_query($conn,"select * from categories where Cat_ID = '$catid'")or die(mysqli_error($conn));
+			$count = mysqli_num_rows($query);
 
 			if ($count > 0) 
 				{
-					mysql_query("INSERT INTO product VALUES ('$pid', '$pname', '0', '$price', '$des', '$admin', '$catid', '$date', '$location')")or die(mysql_error());
+					mysqli_query($conn,"INSERT INTO product VALUES ('$pid', '$pname', '0', '$price', '$des', '$admin', '$catid', '$date', '$location')")or die(mysqli_error($conn));
 					?>
 					<script>
 					alert('Register Success');

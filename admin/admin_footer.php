@@ -4,13 +4,13 @@
 </div>
 <div class="copy-right">
 		<div class="container">
-			<p>© 2019 H2 Foodcity. All rights reserved | Design by
-				<a href="http://afhsoft.com"> Afhsoft</a>
+			<p>© 2023 H2 Foodcity. All rights reserved | Design by
+				<a href="http://anisoft.com"> Anisoft</a>
 			</p>
 		</div>
 	</div>
 	<SCRIPT language=Javascript>
-      <!--
+      
 		      function isNumberKey(evt)
 		      {
 		         var charCode = (evt.which) ? evt.which : event.keyCode
